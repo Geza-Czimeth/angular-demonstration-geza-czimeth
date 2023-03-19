@@ -31,12 +31,12 @@ export class CardetailComponent implements OnInit, OnDestroy {
   }
 
   decreaseSpeed() {
-    this.selectedCar.speed = this.selectedCar.speed + 10;
+    this.selectedCar.speed = this.selectedCar.speed - 10;
     this.carService.updateCar(this.selectedCar);
   }
 
   increaseSpeed() {
-    this.selectedCar.speed = this.selectedCar.speed - 10;
+    this.selectedCar.speed = this.selectedCar.speed + 10;
     this.carService.updateCar(this.selectedCar);
   }
 
