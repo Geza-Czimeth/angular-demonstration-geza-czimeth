@@ -22,13 +22,6 @@ export class CarlistComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((params: Params) => {
-      this.selectedCarIndex = params['id'] ? +params['id'] : -1;
-      if (this.selectedCarIndex != -1) {
-        this.carService.carSelectedSubject.next(this.carService.getCars()[this.selectedCarIndex]);
-      }
-      console.log("Car selected with index: " + this.selectedCarIndex);
-    });
     this.cars = this.carService.getCars();
     this.carService.carListChanged.subscribe(() => {
       this.selectedCarIndex=-1;
@@ -40,5 +33,11 @@ export class CarlistComponent implements OnInit, OnDestroy {
     if (this.carListSubscription && !this.carListSubscription.closed) {
       this.carListSubscription.unsubscribe();
     }
+  }
+
+  carSelected(carIndex: number) {
+    this.selectedCarIndex = carIndex;
+    this.carService.carSelectedSubject.next(this.carService.getCars()[this.selectedCarIndex]);
+    console.log("Car selected with index: " + this.selectedCarIndex);
   }
 }

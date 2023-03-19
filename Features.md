@@ -42,7 +42,3 @@ Centering rows is done with
 </pre>
 
 construct, could be done better
-
-Last car can not be selected in case of deletion
-
-

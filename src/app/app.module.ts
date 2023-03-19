@@ -15,9 +15,7 @@ import {DropdownDirective} from "./components/shared/dropdown.directive";
 const appRoutes: Route[] = [
   {path: '', component: CarlistComponent},
   {path: 'auth', component: AuthComponent},
-  {path: 'carlist', component: CarlistComponent, children:[
-      {path: ':id', component: CarlistComponent},
-    ]},
+  {path: 'carlist', component: CarlistComponent},
   {path: 'carrace', component: CarraceComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: '**', redirectTo: 'not-found'},

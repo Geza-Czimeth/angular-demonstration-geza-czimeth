@@ -2,9 +2,7 @@
   <div class="col-xs-4"></div>
   <div class="col-xs-4">
     <div *ngFor="let car of cars; let carIndex=index">
-      <a
-        [routerLink]="['/carlist']"
-        [queryParams]="{id: carIndex}"
+      <a (click)="carSelected(carIndex)"
         style="cursor: pointer;"
         routerLinkActive="active"
         class="list-group-item clearfix">
