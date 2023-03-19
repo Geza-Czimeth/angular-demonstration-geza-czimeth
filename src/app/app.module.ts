@@ -9,6 +9,7 @@ import { CardetailComponent } from './components/cardetail/cardetail.component';
 import { CarraceComponent } from './components/carrace/carrace.component';
 import {Route, RouterModule, RouterOutlet} from "@angular/router";
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {DropdownDirective} from "./components/shared/dropdown.directive";
 
 
 const appRoutes: Route[] = [
@@ -31,7 +32,8 @@ const appRoutes: Route[] = [
     CarlistComponent,
     CardetailComponent,
     CarraceComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
