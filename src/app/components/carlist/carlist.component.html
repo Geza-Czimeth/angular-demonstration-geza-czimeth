@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-xs-3">
-    <div *ngFor="let car of cars">
+    <div *ngFor="let car of cars; let carIndex=index">
       <a
+        [routerLink]="['/carlist']"
+        [queryParams]="{id: carIndex}"
         style="cursor: pointer;"
         routerLinkActive="active"
         class="list-group-item clearfix">
@@ -20,5 +22,6 @@
     </div>
   </div>
 </div>
+<app-cardetail></app-cardetail>
 
 

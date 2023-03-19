@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Car} from "../shared/car.model";
+import {ActivatedRoute, Params} from "@angular/router";
+import {CarService} from "../../services/car.service";
 
 @Component({
   selector: 'app-carlist',
   templateUrl: './carlist.component.html',
   styleUrls: ['./carlist.component.css']
 })
-export class CarlistComponent {
+export class CarlistComponent implements OnInit {
+
+  selectedCarIndex: number = -1;
+
+  constructor(private activatedRoute: ActivatedRoute, private carService: CarService) {
+
+  }
 
   cars: Car[] = [
     {
@@ -22,4 +30,14 @@ export class CarlistComponent {
       imagePath: 'https://i.pinimg.com/originals/d0/0f/df/d00fdf570efd37d5a93e04d37722ad91.jpg'
     }
   ];
+
+  ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe((params: Params) => {
+      this.selectedCarIndex = params['id'] ? +params['id'] : -1;
+      if (this.selectedCarIndex != -1) {
+        this.carService.carSelectedSubject.next(this.cars[this.selectedCarIndex]);
+      }
+      console.log("Car selected with index: " + this.selectedCarIndex);
+    });
+  }
 }
