@@ -7,6 +7,19 @@ import { AuthComponent } from './components/auth/auth.component';
 import { CarlistComponent } from './components/carlist/carlist.component';
 import { CardetailComponent } from './components/cardetail/cardetail.component';
 import { CarraceComponent } from './components/carrace/carrace.component';
+import {Route, RouterModule, RouterOutlet} from "@angular/router";
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
+
+const appRoutes: Route[] = [
+  {path: '', component: CarlistComponent},
+  {path: 'auth', component: AuthComponent},
+  {path: 'carlist', component: CarlistComponent},
+  {path: 'carrace', component: CarraceComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: 'not-found'},
+];
+
 
 @NgModule({
   declarations: [
@@ -15,10 +28,13 @@ import { CarraceComponent } from './components/carrace/carrace.component';
     AuthComponent,
     CarlistComponent,
     CardetailComponent,
-    CarraceComponent
+    CarraceComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterOutlet,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
