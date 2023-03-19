@@ -33,7 +33,7 @@ Directives demonstration
 
 
 ## Known Bugs
-
+1.
 Centering rows is done with
 <pre>
   <div class="col-xs-4"></div>
@@ -42,3 +42,8 @@ Centering rows is done with
 </pre>
 
 construct, could be done better
+
+2.
+Deleting car by name might produce unwanted result if 2 cars have the same name
+
+3. Speed can be decreased below zero

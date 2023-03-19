@@ -10,6 +10,8 @@ import { CarraceComponent } from './components/carrace/carrace.component';
 import {Route, RouterModule, RouterOutlet} from "@angular/router";
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {DropdownDirective} from "./components/shared/dropdown.directive";
+import { AddCarComponent } from './components/add-car/add-car.component';
+import {FormsModule} from "@angular/forms";
 
 
 const appRoutes: Route[] = [
@@ -31,12 +33,14 @@ const appRoutes: Route[] = [
     CardetailComponent,
     CarraceComponent,
     NotFoundComponent,
-    DropdownDirective
+    DropdownDirective,
+    AddCarComponent
   ],
   imports: [
     BrowserModule,
     RouterOutlet,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
