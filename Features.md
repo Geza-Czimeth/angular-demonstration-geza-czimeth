@@ -30,3 +30,19 @@ Directives demonstration
 <pre>
 <div *ngIf="selectedCar">
 </pre>
+
+
+## Known Bugs
+
+Centering rows is done with
+<pre>
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4"></div>
+</pre>
+
+construct, could be done better
+
+Last car can not be selected in case of deletion
+
+

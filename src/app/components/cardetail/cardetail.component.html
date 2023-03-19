@@ -1,4 +1,34 @@
-<p>cardetail works!</p>
-<div *ngIf="selectedCar">
-  {{selectedCar.imagePath}}
+<div class="row" *ngIf="selectedCar">
+  <h2>Car details</h2>
+  <div class="col-xs-3">
+    <img
+      [src]="selectedCar.imagePath"
+      alt="{{ selectedCar.name }}"
+      class="img-responsive"
+      style="max-height: 300px;">
+  </div>
+<div class="row">
+  <div class="col-xs-12">
+    <h3>{{ selectedCar.name }}</h3>
+    <h3>{{ selectedCar.speed }}</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Tune car <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="increaseSpeed()" style="cursor: pointer;">Increase Speed</a></li>
+        <li><a style="cursor: pointer;" (click)="decreaseSpeed()">Decrease Speed</a></li>
+        <li><a style="cursor: pointer;" (click)="deleteCar()">Delete</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 </div>

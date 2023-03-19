@@ -11,13 +11,13 @@ import {Subscription} from "rxjs";
 export class CardetailComponent implements OnInit, OnDestroy {
 
   selectedCar: Car;
-  carSelectionSubscription:Subscription;
+  carSelectionSubscription: Subscription;
 
   constructor(private carService: CarService) {
   }
 
   ngOnInit(): void {
-    this.carSelectionSubscription=this.carService.carSelectedSubject.subscribe((selectedCar) => {
+    this.carSelectionSubscription = this.carService.carSelectedSubject.subscribe((selectedCar) => {
       console.log("Car object received: " + selectedCar)
       this.selectedCar = selectedCar;
     });
@@ -28,5 +28,20 @@ export class CardetailComponent implements OnInit, OnDestroy {
       this.carSelectionSubscription.unsubscribe();
     }
     console.log("CardetailComponent destroyed")
+  }
+
+  decreaseSpeed() {
+    this.selectedCar.speed = this.selectedCar.speed + 10;
+    this.carService.updateCar(this.selectedCar);
+  }
+
+  increaseSpeed() {
+    this.selectedCar.speed = this.selectedCar.speed - 10;
+    this.carService.updateCar(this.selectedCar);
+  }
+
+  deleteCar() {
+    this.carService.deleteCar(this.selectedCar);
+    this.selectedCar = null;
   }
 }
