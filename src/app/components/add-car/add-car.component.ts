@@ -11,13 +11,19 @@ export class AddCarComponent implements OnInit {
 
   addCar: boolean = false;
   car: Car;
+  error:String;
 
   constructor(private carService: CarService) {
   }
 
   onSubmit() {
+    try{
     this.carService.addCar(this.car);
-    this.addCar=false;
+      this.addCar=false;
+    }catch(e){
+      this.error=e.message;
+    }
+
   }
 
   ngOnInit(): void {

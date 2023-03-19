@@ -42,7 +42,13 @@ export class CarService {
     return this.cars;
   }
 
-  addCar(car: Car) {
-    this.cars.push(car);
+  addCar(newCar: Car) {
+    newCar = {...newCar};
+    let counter=0;
+    while(this.cars.find(carInList => carInList.name == newCar.name)) {
+      counter++;
+      newCar.name=newCar.name + '-'+counter;
+    }
+    this.cars.push({...newCar});
   }
 }
