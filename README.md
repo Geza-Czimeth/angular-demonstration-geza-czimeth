@@ -1,27 +1,31 @@
-# AngularDemonstrationGezaCzimeth
+## Introduction
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+This project created by Geza Czimeth to demonstrate his Angular capabilities. The project have been written in 2 days. According to
+timeboxed nature of development the goal was to deliver an MVP(Minimal Viable Product), in other words: something what is working and tested.
 
-## Development server
+Milestones:
+1. General features of managing cars and running the race (implemented)
+2. Saving/loading data from the cloud (in development)
+3. Adding basic authentication using Firebase (in development)
+
+#### How to run
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+#### How to test
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng test` to execute the unit tests
 
-## Build
+![Tests](/assets/images/karma-tests.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Some pictures from the application
+![Tests](/assets/images/car-details.png)
+![Tests](/assets/images/winner-car.png)
 
-## Running unit tests
+#### Additional components added
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+npm install --save bootstrap@3
 
-## Running end-to-end tests
+#### Meta
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.

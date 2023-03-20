@@ -1,0 +1,43 @@
+<div *ngIf="winnerCar" class="row">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4 media-middle">
+    <h1>The winner car is "{{winnerCar.name}}" with top speed: {{winnerCar.speed}}</h1>
+    <img
+      [src]="winnerCar.imagePath"
+      alt="{{ winnerCar.name }}"
+      class="img-responsive"
+      style="max-height: 300px;">
+  </div>
+  <div class="col-xs-4"></div>
+</div>
+
+<div [ngClass]="{'blur': winnerCar}" class="row">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4">
+    <div *ngFor="let car of cars">
+      <a class="list-group-item clearfix"
+         routerLinkActive="active"
+         style="cursor: pointer;">
+        <div class="pull-left">
+          <h4 class="list-group-item-heading">  {{car.name}}</h4>
+          <p class="list-group-item-text">  {{car.name}}</p>
+        </div>
+        <span class="pull-right">
+        <img
+          [src]="car.imagePath"
+          alt="{{ car.name}}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-4"></div>
+</div>
+<div class="row">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4">
+    <button (click)="startRace()" class="btn btn-primary" disabled="{{winnerCar}}">Start Race</button>
+  </div>
+  <div class="col-xs-4"></div>
+</div>

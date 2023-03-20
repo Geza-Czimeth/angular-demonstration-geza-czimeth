@@ -1,0 +1,38 @@
+<div *ngIf="!addCar" class="row">
+  <button (click)="addNewCar()" class="btn btn-primary">Add car</button>
+</div>
+<div *ngIf="addCar" class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <!--    ngForm naming is essential-->
+    <form #carForm="ngForm" (ngSubmit)="onSubmit()" action="">
+      <div class="form-group">
+        <label for="carName">Car name</label>
+        <input [(ngModel)]="car.name" class="form-control" id="carName" name="carName" ngModel required type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="type">Type</label>
+        <input [(ngModel)]="car.type" class="form-control" id="type" name="type" ngModel required type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="speed">Speed</label>
+        <input [(ngModel)]="car.speed" class="form-control" id="speed" name="speed" ngModel pattern="[1-9][0-9]*"
+               required
+               type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="imagePath">Image path</label>
+        <input [(ngModel)]="car.imagePath" class="form-control" id="imagePath" name="imagePath" ngModel required
+               type="text">
+      </div>
+      <div>
+        <button [disabled]="!carForm.valid" class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </form>
+    <div>
+      <h2 class="error">{{error}}</h2>
+    </div>
+  </div>
+</div>
