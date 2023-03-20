@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Car} from "../shared/car.model";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {CarService} from "../../services/car.service";
 import {Subscription} from "rxjs";
 
@@ -23,8 +23,8 @@ export class CarlistComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.cars = this.carService.getCars();
-    this.carService.carListChanged.subscribe(() => {
-      this.selectedCarIndex=-1;
+    this.carListSubscription = this.carService.carListChanged.subscribe(() => {
+      this.selectedCarIndex = -1;
       this.cars = this.carService.getCars();
     });
   }
