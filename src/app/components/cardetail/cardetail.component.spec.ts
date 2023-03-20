@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CardetailComponent } from './cardetail.component';
+import {CardetailComponent} from './cardetail.component';
 import {Car} from "../shared/car.model";
 import {CarService} from "../../services/car.service";
 
@@ -8,13 +8,13 @@ describe('CardetailComponent', () => {
   let component: CardetailComponent;
   let fixture: ComponentFixture<CardetailComponent>;
   let injectedCarService: CarService;
-  const car:Car = new Car('Ferrari','Sport',1,'123');
+  const car: Car = new Car('Ferrari', 'Sport', 1, '123');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardetailComponent ]
+      declarations: [CardetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CardetailComponent);
     component = fixture.componentInstance;

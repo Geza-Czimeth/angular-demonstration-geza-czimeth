@@ -44,11 +44,11 @@ export class CarService {
 
   addCar(newCar: Car) {
     newCar = {...newCar};
-    let counter=0;
-    while(this.cars.find(carInList => carInList.name == newCar.name)) {
+    let counter = 0;
+    while (this.cars.find(carInList => carInList.name == newCar.name)) {
       counter++;
-      newCar.name=newCar.name + '-'+counter;
+      newCar.name = newCar.name + '-' + counter;
     }
-    this.cars.push({...newCar});
+    this.cars.push(newCar);
   }
 }

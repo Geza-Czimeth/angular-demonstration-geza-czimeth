@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,11 +8,12 @@ import {Router} from "@angular/router";
 })
 export class NotFoundComponent {
 
-  constructor(private router:Router) {
+  constructor(private router: Router) {
   }
+
   backToStartPage() {
-    this.router.navigate(['']).catch(error =>{
-      console.log("Failed to navigate the user "+ error);
+    this.router.navigate(['']).catch(error => {
+      console.log("Failed to navigate the user " + error);
     });
   }
 }

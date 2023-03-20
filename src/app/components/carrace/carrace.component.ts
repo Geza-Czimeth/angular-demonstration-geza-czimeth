@@ -7,7 +7,7 @@ import {Car} from "../shared/car.model";
   templateUrl: './carrace.component.html',
   styleUrls: ['./carrace.component.css']
 })
-export class CarraceComponent implements OnInit{
+export class CarraceComponent implements OnInit {
 
   cars: Car[];
 

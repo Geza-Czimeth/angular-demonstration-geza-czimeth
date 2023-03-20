@@ -1,33 +1,34 @@
-<div class="row" *ngIf="!addCar">
-  <button class="btn btn-primary" (click)="addNewCar()">Add car</button>
+<div *ngIf="!addCar" class="row">
+  <button (click)="addNewCar()" class="btn btn-primary">Add car</button>
 </div>
-<div class="row" *ngIf="addCar">
+<div *ngIf="addCar" class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
     <!--    ngForm naming is essential-->
-    <form action="" (ngSubmit)="onSubmit()"  #carForm="ngForm"  >
+    <form #carForm="ngForm" (ngSubmit)="onSubmit()" action="">
       <div class="form-group">
         <label for="carName">Car name</label>
-        <input type="text" id="carName" class="form-control" ngModel name="carName" [(ngModel)]="car.name" required>
+        <input [(ngModel)]="car.name" class="form-control" id="carName" name="carName" ngModel required type="text">
       </div>
 
       <div class="form-group">
         <label for="type">Type</label>
-        <input type="text" id="type" class="form-control" ngModel name="type" [(ngModel)]="car.type" required>
+        <input [(ngModel)]="car.type" class="form-control" id="type" name="type" ngModel required type="text">
       </div>
 
       <div class="form-group">
         <label for="speed">Speed</label>
-        <input type="text" id="speed" class="form-control" ngModel name="speed" [(ngModel)]="car.speed"
+        <input [(ngModel)]="car.speed" class="form-control" id="speed" name="speed" ngModel pattern="[1-9][0-9]*"
                required
-        pattern="[1-9][0-9]*">
+               type="text">
       </div>
 
       <div class="form-group">
         <label for="imagePath">Image path</label>
-        <input type="text" id="imagePath" class="form-control" ngModel name="imagePath" [(ngModel)]="car.imagePath" required>
+        <input [(ngModel)]="car.imagePath" class="form-control" id="imagePath" name="imagePath" ngModel required
+               type="text">
       </div>
       <div>
-        <button class="btn btn-primary" type="submit" [disabled]="!carForm.valid">Submit</button>
+        <button [disabled]="!carForm.valid" class="btn btn-primary" type="submit">Submit</button>
       </div>
     </form>
     <div>

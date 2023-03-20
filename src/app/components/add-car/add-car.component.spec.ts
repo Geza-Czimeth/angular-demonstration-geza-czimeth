@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AddCarComponent } from './add-car.component';
+import {AddCarComponent} from './add-car.component';
 import {CarService} from "../../services/car.service";
 import {Car} from "../shared/car.model";
 
@@ -13,9 +13,9 @@ describe('AddCarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddCarComponent ]
+      declarations: [AddCarComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AddCarComponent);
     component = fixture.componentInstance;
@@ -29,8 +29,8 @@ describe('AddCarComponent', () => {
 
   it('On submit CarService.addCar is called with the right parameter', () => {
     spyOn(injectedCarService, ADD_CAR_METHOD);
-    const car:Car = new Car('','',123,'123');
-    component.car =car;
+    const car: Car = new Car('', '', 123, '123');
+    component.car = car;
     component.addCar = true;
     component.onSubmit();
     expect(injectedCarService.addCar).toHaveBeenCalledWith(car);
