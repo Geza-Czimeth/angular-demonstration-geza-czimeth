@@ -11,19 +11,18 @@ export class AddCarComponent implements OnInit {
 
   addCar: boolean = false;
   car: Car;
-  error:String;
+  error: String;
 
   constructor(private carService: CarService) {
   }
 
   onSubmit() {
-    try{
-    this.carService.addCar(this.car);
-      this.addCar=false;
-    }catch(e){
-      this.error=e.message;
+    try {
+      this.carService.addCar(this.car);
+      this.addCar = false;
+    } catch (e) {
+      this.error = e.message;
     }
-
   }
 
   ngOnInit(): void {
@@ -32,6 +31,6 @@ export class AddCarComponent implements OnInit {
   }
 
   addNewCar() {
-    this.addCar=true;
+    this.addCar = true;
   }
 }
