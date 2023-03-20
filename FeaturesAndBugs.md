@@ -47,3 +47,6 @@ construct, could be done better
 Deleting car by name might produce unwanted result if 2 cars have the same name
 
 3. Speed can be decreased below zero
+4. There are test failures....
+5. Some of the unit tests do not test if we subscribe properly to the right observable
+6. NotFoundComponent unit test is pending!
