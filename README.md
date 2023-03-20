@@ -11,6 +11,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng test` to execute the unit tests
 
+![Tests](/assets/images/karma-tests.png)
+
+### Some pictures from the application
+![Tests](/assets/images/car-details.png)
+![Tests](/assets/images/winner-car.png)
+
 #### Additional components added
 
 npm install --save bootstrap@3
